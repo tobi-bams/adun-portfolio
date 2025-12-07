@@ -3,6 +3,7 @@ import { Inter, Crimson_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FooterMobile from "@/components/FooterMobile";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FooterMobile />
       </body>
     </html>
   );

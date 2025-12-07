@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Container from "./Container";
 
 const clients = [
   {
@@ -60,14 +61,62 @@ const ClientShowcase = () => {
 
   return (
     <section className="w-full py-20 bg-background">
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-26">
-        <h2 className="text-foreground text-[56px] leading-[72px] mb-6 tracking-[-0.015em] font-[family-name:var(--font-crimson)] font-normal text-center">
-          Past Projects
+      <Container>
+        <h2 className="text-foreground text-[32px] leading-[38px] md:text-[56px] md:leading-[72px] mb-6 tracking-[-0.015em] font-[family-name:var(--font-crimson)] font-normal text-center">
+          Past projects
         </h2>
-        <p className="text-center text-[#B3B3B3] text-base">
+        <p className="text-center text-[#B3B3B3] text-sm md:text-base mb-10">
           Over the years, i have worked on diverse projects for different brands
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mt-10">
+
+        <div className="flex items-center justify-center w-full max-w-[604px] h-[600px] md:h-[850px] rounded-[48px] md:rounded-[64px] bg-neutral-900/50 mx-auto mb-10 lg:hidden">
+          <div className="relative w-[280px] h-[570px]">
+            <div className="absolute top-[35px] left-[18px] w-[244px] h-[500px] rounded-[30px] overflow-hidden bg-black z-0">
+              <Image
+                src={selectedClient.projects[currentProjectIndex].image}
+                fill
+                alt={selectedClient.projects[currentProjectIndex].alt}
+                className="object-cover"
+              />
+            </div>
+
+            <div className="absolute inset-0 z-10 pointer-events-none">
+              <Image
+                src="/iphone-chasis.png"
+                fill
+                alt="iPhone frame"
+                className="object-contain"
+              />
+            </div>
+            {hasMultipleProjects && (
+              <>
+                <button
+                  onClick={handlePrevProject}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center hover:bg-neutral-800 hover:border-white/20 transition-all duration-300 group"
+                  aria-label="Previous project"
+                >
+                  <ChevronLeft className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                </button>
+
+                <button
+                  onClick={handleNextProject}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center hover:bg-neutral-800 hover:border-white/20 transition-all duration-300 group"
+                  aria-label="Next project"
+                >
+                  <ChevronRight className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                </button>
+              </>
+            )}
+
+            {hasMultipleProjects && (
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground text-sm font-[family-name:var(--font-switzer)]">
+                {currentProjectIndex + 1} / {selectedClient.projects.length}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div className="flex flex-col gap-8 place-content-center">
             {clients.map((client) => (
               <div
@@ -80,7 +129,7 @@ const ClientShowcase = () => {
                 }`}
               >
                 <div
-                  className={`h-[100px] w-[100px] rounded-full flex items-center justify-center overflow-hidden transition-colors duration-300 ${
+                  className={`h-16 w-16 md:h-[100px] md:w-[100px] flex-shrink-0 rounded-full flex items-center justify-center overflow-hidden transition-colors duration-300 ${
                     selectedClient.id === client.id
                       ? "bg-black"
                       : "bg-[#111111] group-hover:bg-black"
@@ -91,15 +140,15 @@ const ClientShowcase = () => {
                     width={80}
                     height={80}
                     alt={`${client.name} logo`}
-                    className="object-contain"
+                    className="object-contain w-[50px] h-[50px] md:w-20 md:h-20"
                   />
                 </div>
 
-                <div className="flex-1">
-                  <h3 className="text-foreground text-2xl font-[family-name:var(--font-crimson)] font-normal mb-3">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-foreground text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-normal mb-3">
                     {client.name}
                   </h3>
-                  <p className="text-[#B3B3B3] text-base font-[family-name:var(--font-switzer)] leading-relaxed">
+                  <p className="text-[#B3B3B3] text-sm md:text-base font-[family-name:var(--font-switzer)] leading-relaxed">
                     {client.description}
                   </p>
                 </div>
@@ -107,7 +156,7 @@ const ClientShowcase = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-center w-[604px] h-[850px] rounded-[64px] bg-neutral-900/50">
+          <div className="hidden lg:flex items-center justify-center w-full max-w-[604px] h-[850px] rounded-[64px] bg-neutral-900/50 mx-auto">
             <div className="relative w-[400px] h-[820px]">
               <div className="absolute top-[50px] left-[26px] w-[348px] h-[720px] rounded-[40px] overflow-hidden bg-black z-0">
                 <Image
@@ -154,7 +203,7 @@ const ClientShowcase = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

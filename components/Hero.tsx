@@ -1,32 +1,37 @@
 import Image from "next/image";
 import SocialLinks from "./SocialLinks";
 import VideoPlaceholder from "./VideoPlaceholder";
+import Container from "./Container";
 
 const Hero = () => {
   return (
     <section className="w-full pt-20 pb-20 bg-background">
-      <div className="relative w-full max-w-[1440px] mx-auto px-4 md:px-26 flex justify-center">
-        <div className="absolute left-0 top-0 h-full w-[300px] md:w-[500px] z-0">
-          <Image
-            width={500}
-            height={800}
-            src="/bg-image.png"
-            alt=""
-            className="h-full w-full object-cover"
-          />
+      <Container>
+        <div className="relative flex justify-center">
+          <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 top-0 h-[240px] md:h-[300px] w-[300px] md:w-[500px] z-0 overflow-hidden">
+            <Image
+              width={500}
+              height={800}
+              src="/bg-image.png"
+              alt=""
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+
+          <h1 className="relative z-10 w-full max-w-[958px] font-[family-name:var(--font-crimson)] font-normal text-[32px] leading-[38px] md:text-[64px] md:leading-[80px] tracking-[-0.015em] text-center text-foreground">
+            Hello, I am Muyiwa Aina, a Video <br className="hidden md:block" />
+            Editor and Content Creator with over{" "}
+            <br className="hidden md:block" />5 years of experience.
+          </h1>
         </div>
-        <h1 className="relative z-10 max-w-4xl font-[family-name:var(--font-crimson)] font-normal text-[64px] leading-[80px] tracking-[-0.015em] text-center text-foreground">
-          Hello, I am Muyiwa Aina, a Video Editor and Content Creator with over
-          5 years of experience.
-        </h1>
-      </div>
-      <div className="max-w-[1440px] mx-auto">
-        <p className=" text-[#B3B3B3] place-self-center mt-4 text-base font-[family-name:var(--font-switzer)]">
+
+        <p className="text-[#B3B3B3] text-center mt-4 text-base font-[family-name:var(--font-switzer)]">
           Previously, I led video editing at AGR...a PR agency.
         </p>
-      </div>
-      <SocialLinks />
-      <VideoPlaceholder />
+
+        <SocialLinks />
+        <VideoPlaceholder />
+      </Container>
     </section>
   );
 };

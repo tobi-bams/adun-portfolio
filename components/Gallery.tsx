@@ -3,7 +3,7 @@ import Image from "next/image";
 const Gallery = () => {
   return (
     <section className="mt-6">
-      <h2 className="font-[family-name:var(--font-crimson)] font-normal text-[64px] leading-[88px] tracking-[-0.015em] text-center text-foreground mb-12">
+      <h2 className="font-[family-name:var(--font-crimson)] font-normal text-[32px] md:text-[64px] md:leading-[88px] leading-[38px] tracking-[-0.015em] text-center text-foreground mb-5 md:mb-12">
         Gallery & Fun projects
       </h2>
       <div className="border border-white/10 overflow-hidden">

@@ -125,6 +125,8 @@
   }
   html,
   body {
+    overflow-x: hidden;
+    max-width: 100vw;
     @apply bg-background text-foreground;
   }
 }

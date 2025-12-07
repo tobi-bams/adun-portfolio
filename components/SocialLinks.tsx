@@ -48,20 +48,22 @@ const socialLinks = [
 
 const SocialLinks = () => {
   return (
-    <div className="flex gap-8 items-center justify-center mt-4 py-4">
+    <div className="flex md:gap-8 items-center justify-between md:justify-center mt-4 py-4">
       {socialLinks.map((social) => (
         <Link
           key={social.name}
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 flex items-center justify-center border border-[#494949] rounded-full hover:border-white/50 transition-colors"
+          className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-[#494949] rounded-full hover:border-white/50 transition-colors"
+          aria-label={social.name}
         >
           <Image
             width={social.width}
             height={social.height}
             src={social.icon}
             alt={social.name}
+            className="w-4 h-4 md:w-6 md:h-6"
           />
         </Link>
       ))}

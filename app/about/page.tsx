@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import SocialLinks from "@/components/SocialLinks";
 import Gallery from "@/components/Gallery";
+import Container from "@/components/Container";
 
 const workHistory = [
   {
@@ -36,7 +37,7 @@ const workHistory = [
 export default function AboutPage() {
   return (
     <main className="w-full bg-background min-h-screen pt-24 pb-24">
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-26">
+      <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-white/10 mb-16 overflow-hidden">
           <Image
             width={300}
@@ -57,39 +58,46 @@ export default function AboutPage() {
             height={464}
             src="/3.jpg"
             alt="image-3"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full hidden md:block"
           />
           <Image
             width={300}
             height={464}
             src="/4.jpg"
             alt="image-4"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full hidden md:block"
           />
         </div>
 
         <div className="mb-20">
-          <h1 className="font-[family-name:var(--font-crimson)] font-normal text-[64px] leading-[88px] tracking-[-0.015em] text-left text-foreground mb-6">
+          <h1 className="font-[family-name:var(--font-crimson)] font-normal text-[32px] md:text-[64px] md:leading-[88px] leading-[48px] tracking-[-0.015em] text-left text-foreground mb-6">
             About Me
           </h1>
-          <p className="font-[family-name:var(--font-switzer)] font-normal text-xl leading-10 tracking-[-0.015em] text-[#B3B3B3] mb-8 max-w-full">
+          <p className="font-[family-name:var(--font-switzer)] font-normal text-xl leading-14 tracking-[-0.015em] text-[#B3B3B3] mb-8 max-w-full">
             Currently, I work as a video editor at FrameForge Studios, where I
             help brands, creators, and startups craft stories that feel sharp,
-            intentional, and unforgettable. Previously, I worked as a senior
-            video editor at VisionCraft Media, where I led post-production for
-            campaigns viewed by millions. On the side, I'm building CutLab, a
-            tool that helps editors and creative teams streamline their editing
-            workflow and collaborate with more clarity. Before CutLab, I
-            cofounded ReelSync, a lightweight web app that lets creators
-            organize their footage, share selects, and get timestamped feedback
-            without friction. Before ReelSync, I spent 2 years leading the
-            editorial team at Studio Nine, shaping how production houses
-            approach narrative, color, pacing, and sound design across long-form
-            and short-form content. In 2024, I worked on the early edit
-            direction for FocusFlow (Alpha) at Collective Studios in London,
-            helping define the video aesthetic and story arc for the product's
-            launch. FocusFlow was later re-edited to create a more distilled,
-            cinematic experience that helped users feel immersed and motivated.
+            intentional, and unforgettable.
+            <p>
+              Previously, I worked as a senior video editor at VisionCraft
+              Media, where I led post-production for campaigns viewed by
+              millions. On the side, I'm building CutLab, a tool that helps
+              editors and creative teams streamline their editing workflow and
+              collaborate with more clarity. Before CutLab, I cofounded
+              ReelSync, a lightweight web app that lets creators organize their
+              footage, share selects, and get timestamped feedback without
+              friction.
+            </p>{" "}
+            <p>
+              Before ReelSync, I spent 2 years leading the editorial team at
+              Studio Nine, shaping how production houses approach narrative,
+              color, pacing, and sound design across long-form and short-form
+              content. In 2024, I worked on the early edit direction for
+              FocusFlow (Alpha) at Collective Studios in London, helping define
+              the video aesthetic and story arc for the product's launch.
+              FocusFlow was later re-edited to create a more distilled,
+              cinematic experience that helped users feel immersed and
+              motivated.
+            </p>{" "}
             As a storyteller with a deep love for pacing, emotion, and rhythm, I
             enjoy bringing ideas to life with other creative people. And when
             I'm not editing, refining cuts, building tools, or directing
@@ -98,13 +106,15 @@ export default function AboutPage() {
             excellence.
           </p>
           <div className="flex justify-between">
-            <SocialLinks />
-            <div></div>
+            <div className="w-full md:w-auto">
+              <SocialLinks />
+            </div>
+            <div className="hidden md:block"></div>
           </div>
         </div>
 
         <section>
-          <h2 className="font-[family-name:var(--font-crimson)] font-normal text-[64px] leading-[88px] tracking-[-0.015em] text-left text-foreground mb-12">
+          <h2 className="font-[family-name:var(--font-crimson)] font-normal md:text-[64px] text-[32px]  leading-[88px] tracking-[-0.015em] text-left text-foreground mb-5 md:mb-12">
             Work History
           </h2>
 
@@ -143,7 +153,7 @@ export default function AboutPage() {
           </div>
         </section>
         <Gallery />
-      </div>
+      </Container>
     </main>
   );
 }

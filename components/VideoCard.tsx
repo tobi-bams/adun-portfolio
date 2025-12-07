@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import React from "react";
+
 const VideoCard = ({
   title,
   description,
@@ -9,7 +10,7 @@ const VideoCard = ({
 }) => {
   return (
     <div className="group cursor-pointer w-full max-w-[604px]">
-      <div className="relative w-full h-[560px] rounded-[48px] overflow-hidden mb-6">
+      <div className="relative w-full h-[359px] md:h-[560px] rounded-[48px] overflow-hidden mb-6 border border-white/5 md:border-0">
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black">
           <div
             className="absolute inset-0 opacity-10"
@@ -20,7 +21,7 @@ const VideoCard = ({
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-16 h-16 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)]">
+          <div className="relative w-10 h-10 md:w-16 md:h-16 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)]">
             <div
               className="absolute inset-0 rounded-full backdrop-blur-[4px] saturate-[120%] brightness-[115%]"
               style={{ zIndex: 0 }}
@@ -37,7 +38,7 @@ const VideoCard = ({
             />
 
             <div className="relative z-[3] w-full h-full flex items-center justify-center">
-              <Play className="w-8 h-8 text-white fill-white ml-1 drop-shadow-[0_0_3px_rgba(255,255,255,0.25)] transition-transform duration-200 active:scale-95" />
+              <Play className="w-5 h-5 md:w-8 md:h-8 text-white fill-white ml-0.5 md:ml-1 drop-shadow-[0_0_3px_rgba(255,255,255,0.25)] transition-transform duration-200 active:scale-95" />
             </div>
           </div>
         </div>
@@ -46,10 +47,10 @@ const VideoCard = ({
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-foreground text-3xl font-[family-name:var(--font-crimson)] font-normal">
+        <h3 className="text-foreground text-2xl md:text-3xl font-[family-name:var(--font-crimson)] font-normal">
           {title}
         </h3>
-        <p className="text-[#B3B3B3] text-base font-[family-name:var(--font-switzer)]">
+        <p className="text-[#B3B3B3] text-sm md:text-base font-[family-name:var(--font-switzer)]">
           {description}
         </p>
       </div>

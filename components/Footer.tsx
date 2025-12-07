@@ -2,11 +2,12 @@ import React from "react";
 import { Button } from "./ui/button";
 import SocialLinks from "./SocialLinks";
 import NavLinks from "./ui/NavLinks";
+import Container from "./Container";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-20 bg-background">
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-26">
+    <footer className="hidden md:block w-full pt-20 pb-20 bg-background">
+      <Container>
         <div className="w-full h-[600px] bg-[url('/footer.webp')] bg-cover bg-center relative rounded-[48px] overflow-hidden">
           <div className="relative z-10 h-full flex flex-col justify-between items-center p-8">
             <div></div>
@@ -26,7 +27,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

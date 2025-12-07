@@ -2,28 +2,19 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import NavLinks from "./ui/NavLinks";
+import Container from "./Container";
 
 const Header = () => {
-  const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "About", href: "#about" },
-    { name: "Resume", href: "#resume" },
-  ];
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
     <header className="w-full border-b border-white/10 bg-[#030303]">
-      <div className="flex justify-between items-center w-full max-w-[1440px] mx-auto px-4 md:px-26 h-16">
+      <Container className="flex justify-between h-16 items-center">
         <Link href="/">
           <Avatar>
             <AvatarImage src="/Avatar.jpg" alt="Logo" />
@@ -34,10 +25,43 @@ const Header = () => {
         <div className="hidden md:block">
           <NavLinks />
         </div>
-        <Button className="rounded-2xl cursor-pointer bg-white text-black hover:bg-neutral-200">
-          Hire Me
-        </Button>
-      </div>
+
+        <div className="flex items-center gap-4">
+          <Button className="rounded-4xl cursor-pointer md:py-[22px] bg-white text-black hover:bg-neutral-200 text-sm md:text-base px-4 md:px-8">
+            Hire Me
+          </Button>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden flex flex-col gap-1 w-6 h-6 justify-center"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`w-full h-0.5 bg-white transition-all duration-300 ${
+                mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            />
+            <span
+              className={`w-full h-0.5 bg-white transition-all duration-300 ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`w-full h-0.5 bg-white transition-all duration-300 ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </Container>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-white/10 bg-[#030303]">
+          <div className="px-5 py-6">
+            <NavLinks />
+          </div>
+        </div>
+      )}
     </header>
   );
 };
