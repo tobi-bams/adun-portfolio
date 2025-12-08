@@ -31,7 +31,7 @@ const SelectedWork = () => {
   ];
 
   return (
-    <section className="w-full py-20 bg-background">
+    <section className="w-full py-15 bg-background">
       <Container>
         <h2 className="text-foreground text-[32px] md:text-[56px] leading-[38px] md:leading-[72px] tracking-[-0.015em] font-[family-name:var(--font-crimson)] font-normal mb-12">
           Selected Work
@@ -47,7 +47,7 @@ const SelectedWork = () => {
           ))}
         </div>
 
-        <div className="w-full mt-9 flex justify-center">
+        <div className="w-full mt-16 flex justify-center">
           <Button className="w-full md:w-auto md:px-12 md:py-[30px] rounded-4xl cursor-pointer bg-white text-black hover:bg-neutral-200 py-7 px-9 md:text-base font-medium">
             View all work
           </Button>

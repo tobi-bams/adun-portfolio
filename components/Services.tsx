@@ -59,7 +59,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full py-20 bg-background">
+    <section className="w-full py-15 bg-background">
       <Container>
         <div className="flex flex-col mb-12">
           <h2 className="text-foreground text-[32px] leading-[38px] md:text-[56px] md:leading-[72px] tracking-[-0.015em] font-[family-name:var(--font-crimson)] font-normal text-center">

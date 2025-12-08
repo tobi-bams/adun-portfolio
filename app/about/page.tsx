@@ -73,7 +73,7 @@ export default function AboutPage() {
           <h1 className="font-[family-name:var(--font-crimson)] font-normal text-[32px] md:text-[64px] md:leading-[88px] leading-[48px] tracking-[-0.015em] text-left text-foreground mb-6">
             About Me
           </h1>
-          <p className="font-[family-name:var(--font-switzer)] font-normal text-xl leading-14 tracking-[-0.015em] text-[#B3B3B3] mb-8 max-w-full">
+          <p className="font-[family-name:var(--font-switzer)] font-normal text-xl md:leading-14 leading-10 tracking-[-0.015em] text-[#B3B3B3] mb-8 max-w-full">
             Currently, I work as a video editor at FrameForge Studios, where I
             help brands, creators, and startups craft stories that feel sharp,
             intentional, and unforgettable.

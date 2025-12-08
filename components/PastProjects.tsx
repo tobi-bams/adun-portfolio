@@ -60,7 +60,7 @@ const ClientShowcase = () => {
   const hasMultipleProjects = selectedClient.projects.length > 1;
 
   return (
-    <section className="w-full py-20 bg-background">
+    <section className="w-full py-15 bg-background">
       <Container>
         <h2 className="text-foreground text-[32px] leading-[38px] md:text-[56px] md:leading-[72px] mb-6 tracking-[-0.015em] font-[family-name:var(--font-crimson)] font-normal text-center">
           Past projects
